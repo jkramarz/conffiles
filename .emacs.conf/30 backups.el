@@ -12,6 +12,8 @@
 ;;; Store autosave files in proper location
 (make-directory trc-autosave-dir t)
 
+;; FIXME There are sometimes filenames like `static/js/.#trc-table.js', ie. not `#file#', but `.#file'.
+;; These should also be stored elsewhere.
 (defun auto-save-file-name-p (filename)
   (string-match "^#.*#$" (file-name-nondirectory filename)))
 
