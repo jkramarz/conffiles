@@ -24,4 +24,18 @@
   'emms-player-started-hook 
   '(lambda ()(system-notify 
               "emms is now playing..." 
-              (emms-track-description (emms-playlist-current-selected-track))))))
+              (emms-track-description (emms-playlist-current-selected-track)))))
+
+ ;; add some handy keybindings
+ (global-set-key (kbd "C-c e <up>") 'emms-start)
+ (global-set-key (kbd "C-c e <down>") 'emms-stop)
+ (global-set-key (kbd "C-c e <left>") 'emms-previous)
+ (global-set-key (kbd "C-c e <right>") 'emms-next)
+ 
+ ;; multimedia keys
+ ;; TODO check if they work on win32
+ ;; TODO check if any of this (emms) actually works on win32...
+ (global-set-key (kbd "<XF86AudioPlay>") 'emms-pause)
+ (global-set-key (kbd "<XF86AudioStop>") 'emms-stop)
+ (global-set-key (kbd "<XF86AudioPrev>") 'emms-previous)
+ (global-set-key (kbd "<XF86AudioNext>") 'emms-next))
