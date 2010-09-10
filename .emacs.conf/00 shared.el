@@ -6,8 +6,6 @@
 
 (setq font-lock-maximum-decoration t)
 
-(split-window-vertically)   ;; want two windows at startup 
-
 (tool-bar-mode -1) ;; get rid of that ugly & useless toolbar
 
 ;;; Additional line numbering
