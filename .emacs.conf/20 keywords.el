@@ -23,7 +23,6 @@
 (defun grab-current-line ()
   (buffer-substring-no-properties (line-beginning-position) (line-end-position)))
 
-;; TODO add line numbers to output
 ;; TODO make the buffer visible along with current
 ;; TODO one entry per one line (in case of multiple TODO/FIXME/HACKs)
 ;; TODO make the buffer killable by q (?not sure if needed)
@@ -36,7 +35,9 @@
     (let ((collected-lines '()))
       (while (re-search-forward trc-comment-keywords nil t)
         ;; collect lines
-        (setq collected-lines (cons (grab-current-line) collected-lines)))
+        (setq collected-lines (cons 
+                               (format "%d: %s" (line-number-at-pos) (grab-current-line))
+                               collected-lines)))
 
       ;; generate a new buffer
       (let ((notes-buffer (generate-new-buffer (concat (buffer-name) "-comment-notes"))))
