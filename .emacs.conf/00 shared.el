@@ -12,9 +12,14 @@
 (global-linum-mode 1)
 (setq linum-format "%d ")
 
+;;; Use Org Mode as the default mode for new buffers & stuff.
+(setq default-major-mode 'org-mode)
+
 ;;; Use tabs for identation where appropiate
-(setq-default tab-width 4
-	      indent-tabs-mode t)
+;(setq-default tab-width 4
+;			  indent-tabs-mode t)
+
+(setq-default indent-tabs-mode nil)
 
 (require 'cl) ; because we like Common Lisp, and keyword params are nice
 

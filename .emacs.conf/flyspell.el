@@ -1,5 +1,5 @@
-;;;; NOTE I assume that flyspell is available in standard distribution of EMACS (it should be)
-(setq ispell-dictionary "polish")
+;;; Spelling settings
 
-(add-hook 'LaTeX-mode-hook 'flyspell-mode)
-;;;; TODO switch flyspell dictionary to polish only in LaTeX files
+(try-load-and-configure-library
+ 'flyspell
+ (setq-default ispell-program-name "C:/TRC/programy/Aspell/bin/aspell.exe"))
