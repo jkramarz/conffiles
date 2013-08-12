@@ -1,5 +1,4 @@
 function fish_right_prompt -d "Write out the right prompt"
-
     set retcode $status
     if test $retcode -eq 0
        set_color normal
@@ -31,7 +30,7 @@ function fish_right_prompt -d "Write out the right prompt"
 
     set_color 555
     echo "℃  "
-    date "+%H:%m:%S %d-%m-%Y"
+    date "+%H:%m:%S %d.%m.%Y"
 
     set_color normal
 end
