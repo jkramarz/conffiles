@@ -30,7 +30,7 @@ function fish_right_prompt -d "Write out the right prompt"
 
     set_color 555
     echo "℃  "
-    date "+%H:%m:%S %d.%m.%Y"
+    date "+%H:%M:%S %d.%m.%Y"
 
     set_color normal
 end
