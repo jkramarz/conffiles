@@ -9,7 +9,7 @@ function fish_right_prompt -d "Write out the right prompt"
     set_color normal
 
     set temp1 (sensors -u | awk '{if($1=="temp3_input:"){ print $2; }}')
-    set temp2 (sensors -u | awk '{if($1=="temp3_input:"){ print $2; }}')
+    set temp2 (sensors -u | awk '{if($1=="temp3_max:"){ print $2; }}')
 
     if test $temp1 -lt 70
        set_color green
