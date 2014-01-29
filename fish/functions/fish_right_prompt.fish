@@ -8,8 +8,8 @@ function fish_right_prompt -d "Write out the right prompt"
     echo -n "$retcode "
     set_color normal
 
-    set temp1 (sensors -u | grep temp3_input | awk '{print $2}')
-    set temp2 (sensors -u | grep temp3_input | awk '{print $2}')
+    set temp1 (sensors -u | awk '{if($1=="temp3_input:"){ print $2; }}')
+    set temp2 (sensors -u | awk '{if($1=="temp3_input:"){ print $2; }}')
 
     if test (echo "$temp1 < 70" | bc) -eq 1
        set_color green
